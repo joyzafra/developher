@@ -1,11 +1,25 @@
 package com.acn.demo.main.rest.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
 	 
     public Employee() {
  
     }
  
+    @Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+    private String firstName;
+    private String lastName;
+    private String email;
+ 
+    
     public Employee(Integer id, String firstName, String lastName, String email) {
         super();
         this.id = id;
@@ -46,11 +60,6 @@ public class Employee {
 		this.email = email;
 	}
 
-	private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
- 
     //Getters and setters
  
     @Override
